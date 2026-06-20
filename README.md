@@ -8,6 +8,7 @@ Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2022.
 ## Estructura del repositorio
 
 .
+├── .gitignore
 ├── muestreo_aleatorio.ipynb        # Carga, limpieza, filtrado por estados y generación de submuestras
 ├── EDA.ipynb                       # Análisis exploratorio de datos (gráficos, descriptivos, asociaciones)
 ├── prueba_hipotesis.ipynb          # Pruebas de hipótesis (chi-cuadrado, z, t, análisis estratificado por sexo)
@@ -83,6 +84,48 @@ Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2022.
 - Librerías: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`, `statsmodels`,
   `scikit-learn`, `openpyxl`.
 - El archivo `tr_endutih_usuarios2_anual_2022_mod.xlsx` se encuentra en la raíz del proyecto.
+
+## Flujo de trabajo y ejecución
+
+Los notebooks deben ejecutarse en el siguiente orden porque cada uno genera archivos
+que el siguiente utiliza.
+
+1. **`muestreo_aleatorio.ipynb`**  
+   - Lee `tr_endutih_usuarios2_anual_2022_mod.xlsx`.  
+   - Filtra los estados 7, 12 y 20 y crea la muestra estratificada de 300 registros.  
+   - Genera `submuestra1.csv`, `submuestra2.csv`, `submuestra3.csv`,  
+     `sub_hombres.csv` y `sub_mujeres.csv`.  
+   - *Ejecútalo primero para disponer de los datos de trabajo.*
+
+2. **`EDA.ipynb`**  
+   - Carga las submuestras y realiza el análisis exploratorio completo.  
+   - No genera archivos nuevos; todos los gráficos y tablas se muestran en el notebook.
+
+3. **`prueba_hipotesis.ipynb`**  
+   - Carga las submuestras y aplica las pruebas de hipótesis (chi‑cuadrado, z, t,  
+     análisis estratificado).  
+   - Muestra resultados y gráficos con zonas de rechazo e intervalos de confianza.
+
+4. **`regresion_logistica.ipynb`**  
+   - Carga las submuestras, construye el modelo de regresión logística con interacción,  
+     evalúa su rendimiento y realiza diagnóstico.  
+   - Muestra resúmenes, pseudo‑R², AUC‑ROC, VIF y Hosmer‑Lemeshow.
+
+5. **`factor_expansion.ipynb`**  
+   - Vuelve a leer el archivo Excel original para recuperar la columna `FAC_PER`.  
+   - Reproduce exactamente la misma muestra de 300 y calcula estimaciones poblacionales  
+     ponderadas (proporción de smartphone, IC) y comparaciones por sexo.  
+   - Útil para contrastar las estimaciones muestrales con las poblacionales.
+
+## Documentos adicionales
+
+- **`Reporte_ENDUTIH.pdf`**  
+  Documento escrito que describe los hallazgos, resultados de las pruebas de hipótesis,
+  modelo de regresión y conclusiones del proyecto. Es la memoria final del análisis.
+
+- **`Presentacion_ENDUTIH.pdf`**  
+  Presentación visual con los puntos clave del estudio, gráficos principales y
+  conclusiones, diseñada para exponer los resultados de forma sintética.
 
 ## Créditos
 
