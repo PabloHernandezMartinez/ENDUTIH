@@ -85,6 +85,24 @@ Uso de Tecnologías de la Información en los Hogares (ENDUTIH) 2022.
   `scikit-learn`, `openpyxl`.
 - El archivo `tr_endutih_usuarios2_anual_2022_mod.xlsx` se encuentra en la raíz del proyecto.
 
+## Obtener el proyecto
+
+Puedes obtener una copia del repositorio de dos formas:
+
+1. **Clonar con Git (recomendado)**
+   - Abre una terminal y ejecuta:
+   - git clone https://github.com/PabloHernandezMartinez/ENDUTIH.git
+   - cd ENDUTIH
+
+2. **Descargar como ZIP**
+    Si no tienes Git instalado, puedes descargar el proyecto completo en un archivo ZIP:
+    1. Ve a https://github.com/PabloHernandezMartinez/ENDUTIH
+    2. Haz clic en el botón verde Code y selecciona Download ZIP
+    3. Extrae el contenido en una carpeta de tu elección
+    4. Asegúrate de que el archivo tr_endutih_usuarios2_anual_2022_mod.xlsx esté dentro 
+	de la carpeta extraída (no se incluye en el ZIP, debes colocarlo manualmente)
+
+
 ## Flujo de trabajo y ejecución
 
 Los notebooks deben ejecutarse en el siguiente orden porque cada uno genera archivos
